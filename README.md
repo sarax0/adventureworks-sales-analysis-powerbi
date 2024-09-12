@@ -32,9 +32,18 @@ The Sales Breakdown Page explains total sales across different dimensions, inclu
 
 ### Connecting to AdventureWorksDW2019
 
-The dashboard uses **Direct Query mode** to connect with AdventureWorksDW2019. After connecting, I performed data transformations like removing unnecessary columns renaming columns for clarity, and more. A `_Measure` table was created to store all custom measures used in the report.
+The dashboard uses **Direct Query mode** to connect with `AdventureWorksDW2019`. After connecting, I performed data transformations like removing unnecessary columns renaming columns for clarity, and more. A `_Measure` table was created to store all custom measures used in the report.
+
+**Data Warehouse Link:** [AdventureWorksDW2019](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms)
 
 ![PowerQuery](https://github.com/user-attachments/assets/c2ba3391-e7f5-4104-a75a-ff0a436ab8d2)
+
+
+### Converting Binary Data to Base64 for Image Display
+
+To display images stored as binary data in SQL Server, I converted the binary column to **Base64** format. This conversion allows images to be visualized directly within Power BI visuals Direct Query Mode.
+
+![Binary Data to Base64](https://github.com/user-attachments/assets/e53c20a4-b478-4ad9-9f6a-8796de36f673)
 
 
 ### Dimensional Modeling & Star Schema
