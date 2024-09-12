@@ -18,7 +18,7 @@ The Overview Page provides a summary of key metrics like Total Sales, YoY %, QTD
 
 The Employee Drillthrough Page shows detailed sales performance for a selected employee. This page is accessible via the drillthrough button on the Overview Page.
 
-![Employees Dashboard](https://github.com/user-attachments/assets/b2f36c95-a44c-4c03-b9df-f365a6811e2c)
+![Employees Dashboard](https://github.com/user-attachments/assets/3439c36a-8e7a-4159-b592-09061df000f9)
 
 
 ### 3. Sales Breakdown Page
