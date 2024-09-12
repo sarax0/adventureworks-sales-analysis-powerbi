@@ -12,20 +12,20 @@ Here are the main pages of the dashboard for visual reference:
 
 The Overview Page provides a summary of key metrics like Total Sales, YoY %, QTD, and YTD sales. It also features a drillthrough button for exploring employee data.
 
-![home](https://github.com/user-attachments/assets/0acc41ed-db16-4cc3-b17c-9417928be439)
+![Overview](https://github.com/user-attachments/assets/0acc41ed-db16-4cc3-b17c-9417928be439)
 
 ### 2. Employee Drillthrough Page
 
 The Employee Drillthrough Page shows detailed sales performance for a selected employee. This page is accessible via the drillthrough button on the Overview Page.
 
-![employees](https://github.com/user-attachments/assets/8137691e-820b-4e89-9c92-afc2b1dca5e9)
+![Employees Dashboard](https://github.com/user-attachments/assets/b2f36c95-a44c-4c03-b9df-f365a6811e2c)
 
 
 ### 3. Sales Breakdown Page
 
 The Sales Breakdown Page explains total sales across different dimensions, including product categories, subcategories, and regions.
 
-![sales breakdown](https://github.com/user-attachments/assets/f2ab3a08-c50e-47b5-9913-99c8bb4de1c7)
+![Sales Breakdown](https://github.com/user-attachments/assets/f2ab3a08-c50e-47b5-9913-99c8bb4de1c7)
 
 
 ## Data Setup
