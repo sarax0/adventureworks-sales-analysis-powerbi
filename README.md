@@ -1,54 +1,105 @@
-# PowerBI Project: AdventureWorks Dataset Analysis
+# Sales Analysis: Power BI Dashboard 
 
-## Overview
-This PowerBI project leverages the AdventureWorks dataset using DirectQuery mode to provide comprehensive insights into sales performance. Through  data transformations, modeling techniques, visualization strategies, analysis perspectives, and utilization of various PowerBI functionalities, this project offers an intuitive interface for users to analyze sales data efficiently.
+## Project Overview
 
-## Dataset
-The dataset comprises several tables from the AdventureWorks database, including `Sales.SalesOrderHeader`, `Sales.SalesOrderDetail`, `Sales.vSalesPerson`, `Sales.SalesTerritory`, `Purchasing.ShipMethod`, `Production.Product`, `Production.ProductSubcategory`, and `Production.ProductCategory`. 
+This dashboard is built to analyze and visualize sales data from AdventureWorksDW2019 using Direct Query mode, allowing for real-time data interaction. The goal is to provide clear insights into reseller sales, employee performance, product sales, and more across various dimensions such as time, territory, and reseller information.
 
-## Preprocessing
-### Tables Renaming and Column Cleanup
-- Renamed tables and columns for clarity and consistency.
-- Removed unused columns to streamline data processing.
+## Dashboard Screenshots
 
-### Product Hierarchy
-- Created a single table merging `Production.Product`, `Production.ProductSubcategory`, and `Production.ProductCategory` using M Language.
-- Output includes ProductID, Product, SubCategory, and Category for enhanced analysis.
-- Utilized Power Query to calculate TotalDue, Tax, and Freight.
+Here are the main pages of the dashboard for visual reference:
 
-## Data Modeling
-- Implemented a Star Schema for efficient data representation and querying.
-- Established a Product Hierarchy for better understanding of product relationships.
+### 1. Overview Page
 
-## Measures
-- Defined various measures to facilitate analysis:
-  - # Orders
-  - Total SubTotal
-  - Total Tax
-  - Total Freight
-  - Total Due
-  - # Qty
-- Created a DAX table containing all measures for easy reference.
+The Overview Page provides a summary of key metrics like Total Sales, YoY %, QTD, and YTD sales. It also features a drillthrough button for exploring employee data.
 
-## Visualizations
-- Utilized measures to generate insightful visuals:
-  - Drill Down
-  - Drill Through
-  - Tooltip page
-- Implemented visually appealing and informative visuals with meaningful titles and layouts.
+![home](https://github.com/user-attachments/assets/0acc41ed-db16-4cc3-b17c-9417928be439)
 
-## Insights
-- Analyzed # Orders by OrderDate, ShipDate, and DueDate.
-- Examined # Orders by Status, Shipmethod, Category, SubCategory, and Product.
-- Investigated # Orders vs. TotalDue by Territory.
-- Identified Top 10 Sales Persons based on # Orders or Total Amount with filter options.
+### 2. Employee Drillthrough Page
 
-## Dashboard Visuals
+The Employee Drillthrough Page shows detailed sales performance for a selected employee. This page is accessible via the drillthrough button on the Overview Page.
 
-![Adventureworks_page-0001](https://github.com/sarax0/adventureworks-sales-analysis-powerbi/assets/122404545/deb16a51-ab32-405e-be4f-56505dc56276)
+![employees](https://github.com/user-attachments/assets/8137691e-820b-4e89-9c92-afc2b1dca5e9)
 
-![Adventureworks_page-0002](https://github.com/sarax0/adventureworks-sales-analysis-powerbi/assets/122404545/c6a257d4-ee4a-4d13-a0c3-feb354818ab9)
+
+### 3. Sales Breakdown Page
+
+The Sales Breakdown Page explains total sales across different dimensions, including product categories, subcategories, and regions.
+
+![sales breakdown](https://github.com/user-attachments/assets/f2ab3a08-c50e-47b5-9913-99c8bb4de1c7)
+
+
+## Data Setup
+
+### Connecting to AdventureWorksDW2019
+
+The dashboard uses **Direct Query mode** to connect with AdventureWorksDW2019. After connecting, I performed data transformations like removing unnecessary columns renaming columns for clarity, and more. A `_Measure` table was created to store all custom measures used in the report.
+
+![PowerQuery](https://github.com/user-attachments/assets/c2ba3391-e7f5-4104-a75a-ff0a436ab8d2)
+
+
+### Dimensional Modeling & Star Schema
+
+The core of this dashboard is built using a **star schema**. The **FactResellerSales** table acts as the fact table, linked to several dimension tables:
+- Date Dimensions: `Ship Date`, `Order Date`, `Due Date` (role-playing dates)
+- `Employee`
+- `Product`
+- `Reseller`
+- `Sales Territory`
+
+This setup allows for efficient querying and supports complex analysis.
+![Modeling](https://github.com/user-attachments/assets/a273c5ad-d0a6-46dd-9910-4e414a4427b5)
+
+## Key Components
+
+### Date Dimension and Role-Playing Tables
+
+**Role-playing dimensions** are used to manage different date filters (`Order Date`, `Ship Date`, `Due Date`) for sales analysis, allowing the same date table to filter data in various contexts.
+
+
+### Time Intelligence Using DAX
+
+**DAX time intelligence functions** include:
+- `TOTALYTD` for year-to-date sales.
+- `SAMEPERIODLASTYEAR` for year-over-year comparisons.
+
+These functions help analyze sales trends over time.
+
+### Row-Level Security
+
+**Row-Level Security (RLS)** restricts data access based on user roles, ensuring sensitive information is only visible to authorized users.
+
+![Row-Level Security](https://github.com/user-attachments/assets/0faad402-6b89-422b-a15d-355c1ca8c5d7)
+
+
+### Report Pages & Drillthroughs
+
+The dashboard includes:
+- **Overview Page**: Displays key metrics and includes a drillthrough button.
+- **Employee Drillthrough Page**: Shows detailed employee performance metrics.
+- **Sales Breakdown Page**: Total sales explained across different dimensions
+  
+#### Employee Drillthrough Button
+
+On the **Overview Page**, there is a button for users to **drill through to the Employee Drillthrough Page**. This feature provides detailed sales metrics for the selected employee.
+
+![Drillthrough Button Page](https://github.com/user-attachments/assets/9a081542-e375-4ad3-9438-a296aea2be28)
+
+
+### Custom Visuals and User Interaction
+
+- **Custom Visuals**: Includes bullet charts and images for enhanced data visualization.
+- **Slicer Panel**: Features buttons and bookmarks to toggle slicer visibility.
+
+![Slicer Panel](https://github.com/user-attachments/assets/9379724d-087a-4505-a3b3-8e800675757b)
+
+
+## Additional Features
+
+- **Quick Measures**: Explored the concept of Quick Measure.
+- **Drillthrough Buttons**: Facilitates smooth navigation between report pages.
+- **Email Links in Tables**: Added clickable email links for direct communication with employees.
 
 ## Conclusion
-This PowerBI project provides a robust platform for analyzing AdventureWorks sales data. By employing effective data modeling techniques, comprehensive measures, and insightful visualizations, users can gain valuable insights into sales performance, product hierarchy, and key metrics. The intuitive interface and interactive features enhance usability, making it a valuable tool for decision-making and strategic planning.
+
+This Power BI dashboard provides an interactive and detailed view of reseller sales, helping stakeholders understand sales performance through various dimensions. The use of DAX, custom visuals, dimensional modeling, and interactive features like the slicer panel and bookmarks ensures a practical tool for sales analysis.
 
