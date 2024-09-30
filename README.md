@@ -14,7 +14,7 @@ This dashboard is built to analyze and visualize sales data from AdventureWorksD
 - For each sales person, what are their top-producing sales regions and resellers?
 
 **Key features**
--This dashboard should be available for myself, each of my sales managers, and each sales representative they manage.
+- This dashboard should be available for the Vice President of Sales, each of my sales managers, and each sales representative they manage.
 - Each sales rep should only be able to see their own individual data.
 - Each sales manager should only be able to see their own data, plus the data of any sales reps they manage.
 - The VP of Sales should be able to see all sales people in the report.
