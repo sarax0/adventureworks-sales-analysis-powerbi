@@ -7,22 +7,23 @@ This dashboard is built to analyze and visualize sales data from AdventureWorksD
 ## Sales Dashboard Requirements
 
 **Key questions**
-. Which sales people produce the most sales?
-. Which sales people had the highest sales growth from the previous year?
-• What is each sales person's year-to-date sales total for this year, and how does that compare to this same period last year?
-. For each sales person, what were their top-selling products?
-. For each sales person, what are their top-producing sales regions and resellers?
+- Which sales people produce the most sales?
+- Which sales people had the highest sales growth from the previous year?
+- What is each sales person's year-to-date sales total for this year, and how does that compare to this same period last year?
+- For each sales person, what were their top-selling products?
+- For each sales person, what are their top-producing sales regions and resellers?
+
 **Key features**
-.This dashboard should be available for myself, each of my sales managers, and
-each sales representative they manage.
-Each sales rep should only be able to see their own individual data.
-. Each sales manager should only be able to see their own data, plus the data of any sales reps they manage.
-The VP of Sales should be able to see all sales people in the report.
-. The summary should show each sales person's total sales for the current year, previous year, and lifetime sales
-. Each sales person's photo should be visible, and they should each have a clickable email link to contact them.
-. We should be able to drill down and see more detail about each sales person, including all the key questions listed above.
-Other considerations
-. Each sales person logs their sales at the end of the day, so the data does not change very frequently.
+-This dashboard should be available for myself, each of my sales managers, and each sales representative they manage.
+- Each sales rep should only be able to see their own individual data.
+- Each sales manager should only be able to see their own data, plus the data of any sales reps they manage.
+- The VP of Sales should be able to see all sales people in the report.
+- The summary should show each sales person's total sales for the current year, previous year, and lifetime sales
+- Each sales person's photo should be visible, and they should each have a clickable email link to contact them.
+- We should be able to drill down and see more detail about each sales person, including all the key questions listed above.
+
+**Other considerations**
+- Each sales person logs their sales at the end of the day, so the data does not change very frequently.
 
 ## Dashboard Screenshots
 
